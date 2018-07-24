@@ -38,6 +38,11 @@
         <property name="requestUrl" value="${repayment.url}"/>
         <property name="requestType" value="${repayment.type}"/>
     </bean>
+    <!--刷新还款计划 create by 韩梅生-->
+    <bean id="updateRepaymentSettings" class="com.zw.rule.api.asset.UpdateRepaymentSettings">
+        <property name="requestUrl" value="${updateRepayment.url}"/>
+        <property name="requestType" value="${updateRepayment.type}"/>
+    </bean>
 
     <!-- 手机短信配置BEAN create by luochaofang-->
     <bean id="msgSettings" class="com.zw.rule.api.sortmsg.MsgSettings">

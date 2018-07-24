@@ -31,6 +31,7 @@ public class RepaymentServerImpl implements IRepaymentServer {
         //设置请求参数
         Map<String,Object> paramMap = new HashMap<>(2);
         paramMap.put("orderId",request.getOrderId());
+        paramMap.put("customerId",request.getCustomerId());
         List<Header> headerList  = new ArrayList<>();
         //设置token
         String token = userService.getTokenById(request.getCustomerId());

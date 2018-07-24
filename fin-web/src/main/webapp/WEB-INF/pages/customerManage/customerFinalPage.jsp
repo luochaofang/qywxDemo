@@ -325,6 +325,7 @@
                             <div class="block_hd" style="float:left;">
                                 <s class="ico icon-file-text-alt"></s><span class="bl_tit">还款计划信息</span>
                             </div>
+                            <a style="float: right;padding-top: 1px;font-size: 15px;" class="tabel_btn_style" onclick="refreshRepayment('${order.orderNo}','${order.customerId}')">刷新</a>
                             <table class="tb_info" id="repayList" style="font-size:12px;">
 
                             </table>

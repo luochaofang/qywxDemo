@@ -448,3 +448,18 @@ function showImg(t) {
         content : $('#showImg'),})
 
 }
+
+
+//刷新还款计划
+function refreshRepayment(orderNo,customerId) {
+
+    var param = {};
+    param.orderNo = orderNo;
+    param.customerId = customerId;
+    Comm.ajaxPost('repayment/getRepaymentListByProjectId',JSON.stringify(param), function (data) {
+        if(data){
+            //parent.g_userManage.tableOrder.ajax.reload();
+            location.reload();
+        }
+    },"application/json")
+}

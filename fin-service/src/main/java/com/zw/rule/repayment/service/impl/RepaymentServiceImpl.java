@@ -3,8 +3,11 @@ package com.zw.rule.repayment.service.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.zw.base.util.ArithUtil;
 import com.zw.base.util.DateUtils;
+import com.zw.base.util.HttpUtil;
 import com.zw.base.util.MsgConsts;
 import com.zw.rule.api.BaoFuApi;
+import com.zw.rule.api.asset.AssetRequest;
+import com.zw.rule.api.asset.UpdateRepaymentSettings;
 import com.zw.rule.customer.po.Order;
 import com.zw.rule.loan.po.Loan;
 import com.zw.rule.mapper.customer.OrderMapper;
@@ -21,13 +24,17 @@ import com.zw.rule.repayment.po.MagRepayment;
 import com.zw.rule.repayment.po.Repayment;
 import com.zw.rule.repayment.service.RepaymentService;
 import com.zw.rule.repayment.service.SolvePayMoneyService;
+import com.zw.rule.service.UserService;
 import com.zw.rule.transaction.po.TransactionDetails;
 import com.zw.rule.transaction.po.TransactionException;
 import org.apache.commons.collections.map.HashedMap;
+import org.apache.http.Header;
+import org.apache.http.message.BasicHeader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -66,6 +73,13 @@ public class RepaymentServiceImpl implements RepaymentService {
 
     @Autowired
     private ServicePackageOrderMapper servicePackageOrderMapper;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UpdateRepaymentSettings updateRepaymentSettings;
+
 
     @Resource
     private TransactionDetailsMapper transactionDetailsMapper;
@@ -390,5 +404,24 @@ public class RepaymentServiceImpl implements RepaymentService {
         }else {
             return "订单不存在！";
         }
+    }
+
+
+    /**
+     * @author 韩梅生
+     * 更新还款计划
+     */
+    @Override
+    public String getRepaymentListByProjectId(AssetRequest request) throws IOException {
+        if(request == null){return  null;}
+        //设置请求参数
+        Map<String,Object> paramMap = new HashMap<>(2);
+        paramMap.put("orderNo",request.getOrderNo());
+        paramMap.put("customerId",request.getCustomerId());
+        List<Header> headerList  = new ArrayList<>();
+        //设置token
+        String token = userService.getTokenById(request.getCustomerId());
+        headerList.add(new BasicHeader("token",token));
+        return HttpUtil.doPost(updateRepaymentSettings.getRequestUrl(),paramMap,headerList);
     }
 }

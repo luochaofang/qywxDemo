@@ -2,8 +2,10 @@ package com.zw.rule.repayment.service;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.zw.rule.api.asset.AssetRequest;
 import com.zw.rule.transaction.po.TransactionDetails;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +41,8 @@ public interface RepaymentService {
 
     //扣款操作
     String costDebit(Map map);
+
+    String getRepaymentListByProjectId(AssetRequest request)  throws IOException;
 
 }
 

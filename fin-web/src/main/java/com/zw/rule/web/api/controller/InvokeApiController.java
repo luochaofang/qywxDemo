@@ -46,6 +46,7 @@ public class InvokeApiController {
                 if ((Consts.API_SUCCESS).equals(resCode)) {
                     return Response.ok("查询还款账号成功！", null);
                 }
+                return Response.error(resultStr.get("retMsg").toString());
             }
             return Response.error("查询还款账号失败！");
         } catch (IOException e) {
