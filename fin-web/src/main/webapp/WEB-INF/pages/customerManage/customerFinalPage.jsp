@@ -141,7 +141,7 @@
                                 <td class="align">申请期限:</td>
                                 <td id="periods">${order.periods}</td>
                                 <td class="align">申请时间:</td>
-                                <td id="applayTime"></td>
+                                <td id="applayTime">${order.applayTime}</td>
                             </tr>
                             <tr>
                                 <td>借款用途:</td>

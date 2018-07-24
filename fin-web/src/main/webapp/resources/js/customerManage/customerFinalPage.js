@@ -105,7 +105,7 @@ $().ready(function(){
         }
 
         if(order){
-            $("#applayTime").text(formatTime(order.applayTime));//审核时间
+            //$("#applayTime").text(formatTime(order.applayTime));//审核时间
             $("#payBackUser").html(order.payBackUser);//还款用户
             $("#payBackCard").html(order.payBackCard);//还款账号
         }
