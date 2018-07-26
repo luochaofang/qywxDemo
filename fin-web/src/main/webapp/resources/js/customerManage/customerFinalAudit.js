@@ -319,10 +319,10 @@ function getLoan(orderNo,customerId) {
     Comm.ajaxPost('api/getLoan',JSON.stringify(param), function (data) {
         if(data){
             if (parseInt(data.code) !== 0) {
-                layer.alert(data.msg);
+                layer.alert('放款未完成，请稍等！');
                 //location.reload();
             }else {
-                layer.alert(data.msg);
+                layer.alert('放款成功！');
                 //location.reload();
             }
             g_userManage.tableOrder.ajax.reload();
