@@ -63,6 +63,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.zw.rule.qywxmanage.Customer" >
     update customer_manage
     set head_image = #{headImage,jdbcType=VARCHAR},
@@ -70,4 +71,20 @@
       userid = #{userid,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="findByExtensionType" resultType="com.zw.rule.qywxmanage.Customer">
+      SELECT
+          customer.head_image as headImage,
+          customer. NAME as name,
+          customer.userid as userid
+      FROM
+          content_manage content
+      INNER JOIN content_see_manage seeManage ON content.id = seeManage.content_id
+      INNER JOIN customer_manage customer ON customer.id = seeManage.customer_id
+      WHERE
+          content.extension_type = 1
+      GROUP BY
+          seeManage.customer_id
+  </select>
+
 </mapper>

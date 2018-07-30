@@ -14,14 +14,9 @@ public interface IExtendService {
     String BEAN_KEY = "extendServiceImpl";
 
     /**
-     * 查看推广明细
-     * @return 返回推广明细列表
+     * 根据推广类型 统计每人推广总数
+     * @param extensionType 推广类型
+     * @return 每人推广总数
      */
-    List<Customer> findExtendDetail();
-
-    /**
-     * 查看推广列表
-     * @return 返回推广列表
-     */
-    List<Map<String,String>> findExtendList();
+    List<Map<String,String>> countExtendByExtensionType(Integer extensionType);
 }

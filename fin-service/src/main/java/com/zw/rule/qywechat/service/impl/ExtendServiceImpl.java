@@ -1,7 +1,9 @@
 package com.zw.rule.qywechat.service.impl;
 
+import com.zw.rule.mapper.qywxmanage.ContentShareManageMapper;
 import com.zw.rule.qywechat.service.IExtendService;
 import com.zw.rule.qywxmanage.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,14 +16,12 @@ import java.util.Map;
 @Service(IExtendService.BEAN_KEY)
 public class ExtendServiceImpl implements IExtendService {
 
-    @Override
-    public List<Customer> findExtendDetail() {
-        return null;
-    }
+    @Autowired
+    private ContentShareManageMapper contentShareManageMapper;
 
     @Override
-    public List<Map<String, String>> findExtendList() {
-        return null;
+    public List<Map<String, String>> countExtendByExtensionType(Integer extensionType) {
+        return contentShareManageMapper.countExtendByExtensionType(extensionType);
     }
 
 }
