@@ -1,6 +1,7 @@
-package com.zw.rule.mapper.employeemanage;
+package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.employeemanage.po.Employee;
+
+import com.zw.rule.qywxmanage.Employee;
 
 /**
  * 推广员工mapper

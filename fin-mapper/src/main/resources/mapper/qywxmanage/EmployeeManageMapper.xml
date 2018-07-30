@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zw.rule.mapper.employeemanage.EmployeeManageMapper" >
-  <resultMap id="BaseResultMap" type="com.zw.rule.employeemanage.po.Employee" >
+<mapper namespace="com.zw.rule.mapper.qywxmanage.EmployeeManageMapper" >
+  <resultMap id="BaseResultMap" type="com.zw.rule.qywxmanage.Employee" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="head_image" property="headImage" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -19,7 +19,7 @@
     where id = #{id,jdbcType=BIGINT}
   </select>
 
-  <insert id="insertSelective" parameterType="com.zw.rule.employeemanage.po.Employee" >
+  <insert id="insertSelective" parameterType="com.zw.rule.qywxmanage.Employee" >
     <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -48,7 +48,7 @@
     </trim>
   </insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="com.zw.rule.employeemanage.po.Employee" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zw.rule.qywxmanage.Employee" >
     update employee_manage
     <set >
       <if test="headImage != null" >

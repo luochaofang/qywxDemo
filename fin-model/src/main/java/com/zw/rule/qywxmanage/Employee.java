@@ -1,4 +1,4 @@
-package com.zw.rule.employeemanage.po;
+package com.zw.rule.qywxmanage;
 
 public class Employee {
     private Long id;

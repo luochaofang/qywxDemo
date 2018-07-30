@@ -1,6 +1,6 @@
-package com.zw.rule.mapper.contentsharemanage;
+package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.contentsharemanage.po.ContentShare;
+import com.zw.rule.qywxmanage.ContentShare;
 
 /**
  * 推广内容分享管理

@@ -1,4 +1,4 @@
-package com.zw.rule.contentseemanage.po;
+package com.zw.rule.qywxmanage;
 
 import java.util.Date;
 

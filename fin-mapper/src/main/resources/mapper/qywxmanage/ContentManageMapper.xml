@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zw.rule.mapper.ContentManageMapper" >
-  <resultMap id="BaseResultMap" type="com.zw.rule.contentmanage.po.Content" >
+<mapper namespace="com.zw.rule.mapper.qywxmanage.ContentManageMapper" >
+  <resultMap id="BaseResultMap" type="com.zw.rule.qywxmanage.Content" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="extensiton_type" property="extensitonType" jdbcType="BIGINT" />
@@ -26,7 +26,7 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insertSelective" parameterType="com.zw.rule.contentmanage.po.Content" >
+  <insert id="insertSelective" parameterType="com.zw.rule.qywxmanage.Content" >
     <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -73,7 +73,7 @@
     </trim>
   </insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="com.zw.rule.contentmanage.po.Content" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zw.rule.qywxmanage.Content" >
     update content_manage
     <set >
       <if test="title != null" >

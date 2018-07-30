@@ -1,6 +1,6 @@
-package com.zw.rule.mapper.contentmanage;
+package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.contentmanage.po.Content;
+import com.zw.rule.qywxmanage.Content;
 
 public interface ContentManageMapper {
 

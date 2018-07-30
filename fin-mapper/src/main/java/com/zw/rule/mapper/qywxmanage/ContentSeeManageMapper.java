@@ -1,6 +1,7 @@
-package com.zw.rule.mapper.contentseemanage;
+package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.contentseemanage.po.ContentSee;
+
+import com.zw.rule.qywxmanage.ContentSee;
 
 public interface ContentSeeManageMapper {
 

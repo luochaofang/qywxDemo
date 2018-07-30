@@ -1,7 +1,11 @@
-package com.zw.rule.mapper.extensiontype;
+package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.extensiontype.po.ExtensionType;
 
+import com.zw.rule.qywxmanage.ExtensionType;
+
+/**
+ * 推广类型mapper
+ */
 public interface ExtensionTypeMapper {
     int insertSelective(ExtensionType record);
 
