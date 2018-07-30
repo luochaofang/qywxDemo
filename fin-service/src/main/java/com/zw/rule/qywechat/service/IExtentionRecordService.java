@@ -12,14 +12,14 @@ public interface IExtentionRecordService {
     String BEAN_KEY = "ExtentionRecordService";
 
     /**
-     * 查看推广明细
-     * @return 返回推广明细列表
+     * 查看营销明细
+     * @return 返回营销明细列表
      */
-    List<Map<String,String>> findExtendDetail();
+    List<Map<String,String>> findExtendDetail(long empid);
 
     /**
-     * 查看推广列表
-     * @return 返回推广列表
+     * 查看营销列表
+     * @return 返回营销列表
      */
-    List<Map<String,String>> findExtendList();
+    List<Map<String,String>> findExtendList(long empid);
 }
