@@ -1,6 +1,7 @@
 package com.zw.rule.qywechat.service.impl;
 
 import com.zw.rule.qywechat.service.IExtendService;
+import com.zw.rule.qywxmanage.Customer;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.Map;
 public class ExtendServiceImpl implements IExtendService {
 
     @Override
-    public List<Map<String, String>> findExtendDetail() {
+    public List<Customer> findExtendDetail() {
         return null;
     }
 

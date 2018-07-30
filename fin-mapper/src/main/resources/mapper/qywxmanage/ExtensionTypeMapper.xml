@@ -73,4 +73,10 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="findTypes" resultType="com.zw.rule.qywxmanage.ExtensionType">
+    select
+    <include refid="Base_Column_List" />
+    from extension_type
+  </select>
 </mapper>
