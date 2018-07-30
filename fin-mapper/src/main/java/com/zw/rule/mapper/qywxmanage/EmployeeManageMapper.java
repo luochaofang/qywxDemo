@@ -14,4 +14,11 @@ public interface EmployeeManageMapper {
 
     int updateByPrimaryKeySelective(Employee record);
 
+    /**
+     * 根据userId获取员工
+     * @param userId
+     * @return
+     */
+    Employee selectByuserId(String userId);
+
 }

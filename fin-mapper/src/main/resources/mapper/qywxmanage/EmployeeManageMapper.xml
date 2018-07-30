@@ -19,6 +19,13 @@
     where id = #{id,jdbcType=BIGINT}
   </select>
 
+  <select id="selectByuserId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from employee_manage
+    where userid = #{userId,jdbcType=BIGINT}
+  </select>
+
   <insert id="insertSelective" parameterType="com.zw.rule.qywxmanage.Employee" >
     <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
