@@ -1,5 +1,7 @@
 package com.zw.rule.qywechat.service;
 
+import com.zw.rule.qywxmanage.Customer;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +17,7 @@ public interface IExtendService {
      * 查看推广明细
      * @return 返回推广明细列表
      */
-    List<Map<String,String>> findExtendDetail();
+    List<Customer> findExtendDetail();
 
     /**
      * 查看推广列表

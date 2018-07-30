@@ -1,29 +1,16 @@
 package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.po.User;
-import com.zw.rule.po.UserExample;
-import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
+import com.zw.rule.qywxmanage.User;
 
 public interface UserMapper {
-    int countByExample(UserExample example);
-
-    int deleteByExample(UserExample example);
-
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
 
     int insertSelective(User record);
 
-    List<User> selectByExample(UserExample example);
-
     User selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
-
-    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
     int updateByPrimaryKeySelective(User record);
 

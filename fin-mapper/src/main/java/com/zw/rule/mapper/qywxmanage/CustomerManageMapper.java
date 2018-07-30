@@ -1,31 +1,17 @@
 package com.zw.rule.mapper.qywxmanage;
 
-import com.zw.rule.po.CustomerManage;
-import com.zw.rule.po.CustomerManageExample;
-import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
+import com.zw.rule.qywxmanage.Customer;
 
 public interface CustomerManageMapper {
-    int countByExample(CustomerManageExample example);
-
-    int deleteByExample(CustomerManageExample example);
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(CustomerManage record);
+    int insertSelective(Customer record);
 
-    int insertSelective(CustomerManage record);
+    Customer selectByPrimaryKey(Long id);
 
-    List<CustomerManage> selectByExample(CustomerManageExample example);
+    int updateByPrimaryKeySelective(Customer record);
 
-    CustomerManage selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CustomerManage record, @Param("example") CustomerManageExample example);
-
-    int updateByExample(@Param("record") CustomerManage record, @Param("example") CustomerManageExample example);
-
-    int updateByPrimaryKeySelective(CustomerManage record);
-
-    int updateByPrimaryKey(CustomerManage record);
+    int updateByPrimaryKey(Customer record);
 }
