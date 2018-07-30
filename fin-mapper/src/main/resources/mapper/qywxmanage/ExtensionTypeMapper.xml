@@ -4,13 +4,13 @@
   <resultMap id="BaseResultMap" type="com.zw.rule.qywxmanage.ExtensionType" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="sorting" property="sorting" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="BIT" />
     <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
   </resultMap>
 
   <sql id="Base_Column_List" >
-    id, name, sort, status, addtime
+    id, name, sorting, status, addtime
   </sql>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
@@ -29,8 +29,8 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="sort != null" >
-        sort,
+      <if test="sorting != null" >
+        sorting,
       </if>
       <if test="status != null" >
         status,
@@ -43,8 +43,8 @@
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="sort != null" >
-        #{sort,jdbcType=INTEGER},
+      <if test="sorting != null" >
+        #{sorting,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
         #{status,jdbcType=BIT},
@@ -61,8 +61,8 @@
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="sort != null" >
-        sort = #{sort,jdbcType=INTEGER},
+      <if test="sorting != null" >
+        sorting = #{sorting,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
         status = #{status,jdbcType=BIT},

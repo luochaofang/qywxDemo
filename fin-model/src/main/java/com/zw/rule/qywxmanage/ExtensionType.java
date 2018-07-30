@@ -7,7 +7,7 @@ public class ExtensionType {
 
     private String name;
 
-    private Integer sort;
+    private Integer sorting;
 
     private Boolean status;
 
@@ -29,12 +29,11 @@ public class ExtensionType {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getSort() {
-        return sort;
+    public Integer getSorting() {
+        return sorting;
     }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
+    public void setSorting(Integer sorting) {
+        this.sorting = sorting;
     }
 
     public Boolean getStatus() {
