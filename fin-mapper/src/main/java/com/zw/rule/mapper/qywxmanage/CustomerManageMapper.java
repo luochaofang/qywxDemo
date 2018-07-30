@@ -2,6 +2,9 @@ package com.zw.rule.mapper.qywxmanage;
 
 
 import com.zw.rule.qywxmanage.Customer;
+import com.zw.rule.qywxmanage.CustomerRecord;
+
+import java.util.List;
 
 import java.util.List;
 
@@ -18,4 +21,6 @@ public interface CustomerManageMapper {
     int updateByPrimaryKey(Customer record);
 
     List<Customer> findByExtensionType(Integer extensionType);
+
+    List<CustomerRecord> clicksRecord(Long id);
 }

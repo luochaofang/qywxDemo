@@ -2,23 +2,19 @@ package com.zw.rule.web.qywechat.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zw.base.util.StringUtils;
-import com.zw.rule.core.Response;
 import com.zw.rule.qywechat.service.IEmployeeService;
 import com.zw.rule.qywxmanage.Employee;
 import com.zw.rule.util.HttpUtil;
-import com.zw.rule.web.aop.annotaion.WebLogger;
-import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Map;
 
 
 @Controller
 @RequestMapping("qywechatLogin")
-public class LoginController {
+public class EnterpriseWeChatLoginController {
 
     @Autowired
     private IEmployeeService employeeService;
@@ -30,7 +26,6 @@ public class LoginController {
      * @return
      */
     @GetMapping("loginPage")
-    @WebLogger("登录跳转页面")
     public String loginPage(HttpServletRequest request){
         HttpSession session = request.getSession();
         String userId = session.getAttribute("userId").toString();
@@ -51,7 +46,6 @@ public class LoginController {
      * @return
      */
     @PostMapping("login")
-    @WebLogger("免密登录")
     public String login(HttpServletRequest request)throws Exception {
         String url="";
         String accessToken="";
