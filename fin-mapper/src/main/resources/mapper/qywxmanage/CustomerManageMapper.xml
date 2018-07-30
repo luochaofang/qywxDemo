@@ -87,4 +87,25 @@
           seeManage.customer_id
   </select>
 
+  <!-- 查询点击过推广信息的客户信息 -->
+  <select id="clicksRecord" parameterType="java.lang.Long" resultType="com.zw.rule.qywxmanage.CustomerRecord">
+    SELECT
+	cum.head_image as headImage,
+	cum.NAME as name,
+	com.id as contentId,
+	com.title as title,
+	sum( csm.id ) as numberOfClicks
+FROM
+	customer_manage cum
+	LEFT JOIN content_see_manage csm ON csm.content_id = cum.id
+	LEFT JOIN content_manage com ON com.id = csm.content_id
+WHERE
+	com.id = #{id}
+GROUP BY
+	cum.head_image,
+	cum.NAME,
+	com.id,
+	com.title
+  </select>
+
 </mapper>
