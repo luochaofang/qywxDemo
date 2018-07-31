@@ -42,7 +42,7 @@
     </ul>
 </div>
 <div class="viewAll font30">
-    <a href="./staffExpand.html">查看全部员工推广明细</a>
+    <a href="${ctx}${module}/extend/extendDetail">查看全部员工推广明细</a>
     <a href="./activityExpand.html">查看全部活动推广明细</a>
 </div>
 

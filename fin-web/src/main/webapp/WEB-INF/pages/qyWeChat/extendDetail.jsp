@@ -14,10 +14,10 @@
     <title>Document</title>
     <%@include file="../common/qywxtaglibs.jsp"%>
     <link rel="stylesheet" href="${ctx}/resources/css/qywxcss/expandDetails.css${version}">
-</head>
+</head
 <body>
 <header class="title">
-    <a href="./staffExpand.html" class="back font32"></a>
+    <a href="${ctx}${module}/extend/extendDetail" class="back font32"></a>
     <div class="title-name center font36">推广明细</div>
 </header>
 <div class="expandDetails">
@@ -30,10 +30,12 @@
             <div class="photo fl">头像</div>
             <div class="name fr">姓名</div>
         </li>
-        <c:forEach items="${customerIdList}" var="customer">
+        <c:forEach items="${customerIdList}" var="customerId">
         <li class="itemInfo clearfix">
-            <c:set var="customerObj" value="${customerMap.get(customer.toString())}"/>
-            <div class="photo fl">${customerObj.headImage}</div>
+            <c:set var="customerObj" value="${customerMap.get(customerId.toString())}"/>
+            <div class="photo fl">
+                <img src="${ctx}/resources/images/${customerObj.headImage}" alt="">
+            </div>
             <div class="name fr">${customerObj.name}</div>
         </li>
         </c:forEach>
