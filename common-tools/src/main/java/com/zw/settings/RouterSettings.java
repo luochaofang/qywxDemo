@@ -8,4 +8,6 @@ public interface RouterSettings {
 
     String VERSION = "/1.0.0";
 
+    String MODULE = "qyWeChat";
+
 }
