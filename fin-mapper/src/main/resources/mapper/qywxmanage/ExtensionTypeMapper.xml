@@ -78,5 +78,6 @@
     select
     <include refid="Base_Column_List" />
     from extension_type
+    order by sorting
   </select>
 </mapper>
