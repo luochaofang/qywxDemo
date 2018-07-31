@@ -85,12 +85,12 @@ public class TicketUtil {
     public synchronized static String getJsapiToken(String appId)
             throws Exception {
         // 身份票据字符串
-        String at = getAccessToken("appid" + appId);
+        String at = getAccessToken(appId);
         if (at == null || at.trim().length() == 0) {
             return null;
         }
 
-        TicketBean jsapiTicket = jtMap.get(appId);
+        TicketBean jsapiTicket = jtMap.get("appid" + appId);
         if (jsapiTicket == null || jsapiTicket.isExpired()
                 || jsapiTicket.getTicket() == null) {
             // 重新获取Tiket
@@ -120,7 +120,7 @@ public class TicketUtil {
 
     public static void main(String[] args) {
         try {
-            System.out.println(getAccessToken("TBPIxYr4jOF_TTJFpD1XFIu3DlRgeFxr4qReSjJ4XhA"));
+            System.out.println(getJsapiToken("1000002"));
         } catch (Exception e) {
             e.printStackTrace();
         }
