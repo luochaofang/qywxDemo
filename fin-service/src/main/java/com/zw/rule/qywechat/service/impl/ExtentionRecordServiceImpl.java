@@ -5,12 +5,12 @@ import com.zw.rule.mapper.qywxmanage.CustomerManageMapper;
 import com.zw.rule.mapper.qywxmanage.UserMapper;
 import com.zw.rule.qywechat.service.IExtentionRecordService;
 import com.zw.rule.qywxmanage.CustomerRecord;
+import com.zw.rule.qywxmanage.ExtensionRecordQuery;
 import com.zw.rule.qywxmanage.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 营销纪录服务
@@ -25,14 +25,10 @@ public class ExtentionRecordServiceImpl implements IExtentionRecordService {
     CustomerManageMapper customerManageMapper;
     @Resource
     UserMapper userMapper;
-    @Override
-    public List<Map<String, String>> findExtendList(long empid) {
-        return null;
-    }
 
     @Override
-    public List<Map<String, String>> findExtendDetail(long empid) {
-        return null;
+    public List<ExtensionRecordQuery> findExtendList(String userid) {
+        return contentSeeManageMapper.selectForExtentionRecord(userid);
     }
 
     @Override

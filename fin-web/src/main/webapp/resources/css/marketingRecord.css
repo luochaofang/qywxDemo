@@ -1,0 +1,21 @@
+.recordTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.recordTable tr {
+  line-height: .70rem;
+}
+.recordTable tr:nth-child(odd) {
+  background-color: #f8fbff;
+}
+.recordTable tr:first-child {
+  line-height: .90rem;
+  background-color: #deebfc;
+}
+.recordTable td {
+  border: none;
+}
+.recordTable .view a {
+  display: block;
+  color: #3686ff;
+}
