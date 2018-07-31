@@ -1,7 +1,12 @@
+<%--
+  员工推广明细
+  User: 陈清玉
+  Date: 2018/7/31
+  Time: 14:08
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +34,7 @@
         <tr>
             <td> ${employeeMap.get(list.employeeId.toString())} (${list.extensionTypeNum})</td>
             <c:forEach items="${typeList}" var="type">
-            <td><a href="./expandDetails.html">${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</a></td>
+            <td><a href="./extendDetail/${type.id}/${list.employeeId}">${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</a></td>
             </c:forEach>
         </tr>
         </c:forEach>

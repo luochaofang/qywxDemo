@@ -1,12 +1,9 @@
 package com.zw.rule.qywechat.service.impl;
 
+import com.zw.rule.mapper.qywxmanage.ContentSeeManageMapper;
 import com.zw.rule.mapper.qywxmanage.ContentShareManageMapper;
 import com.zw.rule.mapper.qywxmanage.EmployeeManageMapper;
-import com.zw.rule.mybatis.ParamFilter;
 import com.zw.rule.qywechat.service.IExtendService;
-import com.zw.rule.qywxmanage.Content;
-import com.zw.rule.qywxmanage.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.zw.rule.qywxmanage.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +25,9 @@ public class ExtendServiceImpl implements IExtendService {
 
     @Autowired
     private ContentShareManageMapper contentShareManageMapper;
+
+    @Autowired
+    private ContentSeeManageMapper contentSeeManageMapper;
 
     @Override
     public List<Map> findPromotionByProTime() {
@@ -55,5 +55,10 @@ public class ExtendServiceImpl implements IExtendService {
     @Override
     public List<Map<String, Object>> countExtendAll() {
         return contentShareManageMapper.countExtendAll();
+    }
+
+    @Override
+    public List<Long> selectExtendSeeCustomer(Long extendTypeId, Long employeeId) {
+        return contentSeeManageMapper.selectExtendSeeCustomer(extendTypeId,employeeId);
     }
 }

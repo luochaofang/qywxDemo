@@ -37,7 +37,13 @@ public interface IEmployeeService {
      */
     Map<String,String> findAllToMap();
 
-
+    /**
+     * 按主键取一条数据
+     * @author 陈淸玉 create on  2018-0-31
+     * @param id 主键ID
+     * @return 类型信息
+     */
+    Employee getEmployeeById(Long id);
 
 
 }

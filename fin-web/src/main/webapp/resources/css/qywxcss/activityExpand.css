@@ -1,36 +1,46 @@
 .expandDetails .activityType {
   width: 100%;
-  padding: .30rem;
+  padding: 0 .30rem;
 }
 .expandDetails .activityType li {
-  width: 25%;
+  width: 20%;
   line-height: .90rem;
+  color: #999999;
+  margin: 0 2.5%;
 }
 .expandDetails .activityType .now {
-  border-bottom: 3px solid #1d83d2;
+  border-bottom: 3px solid #1d82d2;
+  color: #1d82d2;
+}
+.expandDetails .activityTitle {
+  background-color: #deebfc;
+  line-height: .90rem;
+  padding: 0 .30rem;
 }
 .expandDetails .activityInfo {
-  padding: .30rem 0;
+  display: none;
+}
+.expandDetails .activityInfo.now {
+  display: block;
+}
+.expandDetails .activityInfo {
+  padding: 0 .30rem;
 }
 .expandDetails .activityInfo li {
-  line-height: .90rem;
+  line-height: .72rem;
 }
 .expandDetails .activityInfo li:nth-child(odd) {
   background-color: #fff;
 }
 .expandDetails .activityInfo li:nth-child(even) {
-  background-color: #f6f8fa;
+  background-color: #f8fbff;
 }
-.expandDetails .activityInfo li:first-child {
-  background-color: #fff1da;
-  color: #ed7e54;
-}
-.expandDetails .activityInfo .activityName {
+.expandDetails .activityName {
   width: 56%;
 }
-.expandDetails .activityInfo .expandNumber {
+.expandDetails .expandNumber {
   width: 22%;
 }
-.expandDetails .activityInfo .viewedNumber {
+.expandDetails .viewedNumber {
   width: 22%;
 }

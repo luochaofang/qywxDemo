@@ -60,5 +60,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return map;
     }
 
-
+    @Override
+    public Employee getEmployeeById(Long id) {
+        return employeeMapper.selectByPrimaryKey(id);
+    }
 }

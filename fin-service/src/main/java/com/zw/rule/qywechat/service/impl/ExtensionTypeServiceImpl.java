@@ -35,4 +35,9 @@ public class ExtensionTypeServiceImpl implements IExtensionTypeService {
     public List<ExtensionType> getExtensionTypeList(Map param) {
         return extensionTypeMapper.getExtensionTypeList(param);
     }
+
+    @Override
+    public ExtensionType getExtensionTypeById(Long id) {
+        return extensionTypeMapper.selectByPrimaryKey(id);
+    }
 }

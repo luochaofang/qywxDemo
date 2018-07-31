@@ -101,4 +101,17 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectExtendSeeCustomer" resultType="java.lang.Long">
+    SELECT
+        seeManage.customer_id as customerId
+    FROM
+        content_share_manage shareManage
+    INNER JOIN content_manage content  on content.extension_type = shareManage.extension_type
+    INNER JOIN content_see_manage seeManage  on content.id = seeManage.content_id
+    WHERE
+        content.extension_type = #{extendTypeId} and shareManage.employee_id = #{employeeId}
+    GROUP BY
+        seeManage.customer_id
+  </select>
 </mapper>

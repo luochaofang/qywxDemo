@@ -18,16 +18,16 @@ public class ExtendBusiness {
 
     private List<ExtensionType> extensionTypes;
 
+    private List<Map<String, Object>> extendAll;
+
     public ExtendBusiness(IExtendService extendService , List<ExtensionType> extensionTypes) {
         this.extendService = extendService;
         this.extensionTypes = extensionTypes;
     }
 
-    private List<Map<String, Object>> extendAll;
-
     /**
-     * 获取推广明细列表
-     * @return 推广明细列表
+     * 获取推广查看人列表信息
+     * @return 推广看人列表信息
      */
     public List<Map<String,Object>> extendDetailList(){
         //获取全部推广明细信息
@@ -39,6 +39,23 @@ public class ExtendBusiness {
         for (ExtensionType type : extensionTypes) {
             handleData(type.getId());
         }
+        return  extendAll;
+    }
+
+    /**
+     * 获取推广查看人员列表
+     * @author 陈淸玉 create on  2018-0-31
+     * @param extendTypeId 推广类型ID
+     * @param employeeId 推广人ID
+     * @return 推广查看人员列表
+     */
+    public List<Map<String,Object>> extendDetail(Long extendTypeId,Long employeeId){
+        //推广查看人员id
+        List<Long> customers = extendService.selectExtendSeeCustomer(extendTypeId, employeeId);
+        if(CollectionUtils.isEmpty(customers)){
+            return extendAll;
+        }
+
         return  extendAll;
     }
 

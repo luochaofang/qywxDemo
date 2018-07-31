@@ -17,7 +17,12 @@ public interface CustomerManageMapper {
 
     int updateByPrimaryKey(Customer record);
 
-    List<Customer> findByExtensionType(Integer extensionType);
-
     List<CustomerRecord> clicksRecord(Long id);
+
+    /**
+     * 查询所有用户信息
+     * @author 陈淸玉
+     * @return 查看人信息列表
+     */
+    List<Customer> selectAll();
 }

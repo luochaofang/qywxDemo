@@ -16,6 +16,13 @@
     from customer_manage
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from customer_manage
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from customer_manage
     where id = #{id,jdbcType=BIGINT}
@@ -71,22 +78,6 @@
       userid = #{userid,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-
-  <select id="findByExtensionType" resultType="com.zw.rule.qywxmanage.Customer">
-      SELECT
-          customer.head_image as headImage,
-          customer. NAME as name,
-          customer.userid as userid
-      FROM
-          content_manage content
-      INNER JOIN content_see_manage seeManage ON content.id = seeManage.content_id
-      INNER JOIN customer_manage customer ON customer.id = seeManage.customer_id
-      WHERE
-          content.extension_type = 1
-      GROUP BY
-          seeManage.customer_id
-  </select>
-
   <!-- 查询点击过推广信息的客户信息 -->
   <select id="clicksRecord" parameterType="java.lang.Long" resultType="com.zw.rule.qywxmanage.CustomerRecord">
     SELECT

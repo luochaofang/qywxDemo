@@ -22,4 +22,12 @@ public interface IExtensionTypeService {
      * @return
      */
     List<ExtensionType> getExtensionTypeList(Map param);
+
+    /**
+     * 按主键取一条数据
+     * @author 陈淸玉 create on  2018-0-31
+     * @param id 主键ID
+     * @return 类型信息
+     */
+    ExtensionType getExtensionTypeById(Long id);
 }

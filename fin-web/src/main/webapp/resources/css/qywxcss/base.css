@@ -138,45 +138,6 @@ a:active {
   text-align: right;
 }
 /* 公共类 */
-.color-333 {
-  color: #333;
-}
-.color-666 {
-  color: #666;
-}
-.color-999 {
-  color: #999;
-}
-.color-ccc {
-  color: #ccc;
-}
-.color-ddd {
-  color: #ddd;
-}
-.color-disable {
-  color: #dcdfe6;
-}
-.color-blue {
-  color: #3377ff;
-}
-.color-red {
-  color: #ff4c4c;
-}
-.color-orange {
-  color: #ff944d;
-}
-.color-green {
-  color: #4bbe71;
-}
-.color-e5e5e5 {
-  color: #e5e5e5;
-}
-.color-fff {
-  color: #fff;
-}
-.bgcolor-eee {
-  background-color: #eee;
-}
 .font20 {
   font-size: .20rem;
 }
@@ -207,9 +168,6 @@ a:active {
 .font40 {
   font-size: .40rem;
 }
-.font-bold {
-  font-weight: 600;
-}
 input::-webkit-input-placeholder {
   /*WebKit browsers*/
   color: #ccc;
@@ -237,8 +195,8 @@ body {
   user-select: none;
 }
 .title {
-  height: 1.10rem;
-  line-height: 1.10rem;
+  height: .90rem;
+  line-height: .90rem;
   background: linear-gradient(to top right, #3686ff, #59abf7);
   position: relative;
 }
@@ -247,9 +205,15 @@ body {
   height: 100%;
   color: #fff;
   position: absolute;
-  background: url(../../images/qywximg/icons/back.png) 0.3rem center no-repeat;
-  background-size: .16rem .25rem;
+  background: url(../../images/icons/back.png) 0.3rem center no-repeat;
+  background-size: .18rem .32rem;
 }
 .title .title-name {
+  color: #fff;
+}
+.title .record {
+  position: absolute;
+  top: 0;
+  right: .30rem;
   color: #fff;
 }

@@ -12,8 +12,9 @@ public interface ICustomerService {
     String BEAN_KEY = "customerServiceImpl";
 
     /**
-     * 按推广类型查询查看人信息列表
+     * 查询所有用户信息
+     * @author 陈淸玉
      * @return 查看人信息列表
      */
-    List<Customer> findCustomerDetail(Integer extensionType);
+    List<Customer> selectAll();
 }

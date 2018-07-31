@@ -1,46 +1,72 @@
+body {
+  background-color: #f0f0f0;
+}
 .rankList {
-  margin: .50rem .30rem 0;
-  border: 1px solid #e5e5e5;
-  border-radius: .10rem;
-}
-.rankList .rankListTitle {
-  line-height: .90rem;
-}
-.rankList .listContent {
-  padding: 0 .30rem;
-}
-.rankList .listContent li:last-child {
-  border: none;
+  background-color: #fff;
+  padding-left: .30rem;
 }
 .rankList .listDetails {
-  line-height: 1.00rem;
+  padding-right: .30rem;
   border-bottom: 1px solid #e5e5e5;
 }
-.rankList .listDetails .ranking {
-  width: 20%;
+.rankList .listDetails .gold {
+  width: 1.50rem;
+  height: 1.24rem;
+  background: url(../images/icons/gold.png) center no-repeat;
+  background-size: 1.03rem 1.24rem;
 }
-.rankList .listDetails .photo {
-  width: 35%;
+.rankList .listDetails .gold img {
+  width: .96rem;
+  height: .96rem;
+  border-radius: 50%;
+  margin: .25rem 0 0 .28rem;
 }
-.rankList .listDetails .photo img {
-  height: 1.00rem;
-  width: auto;
-  margin: 0.20rem auto;
+.rankList .listDetails .sliver {
+  width: 1.50rem;
+  height: 1.04rem;
+  background: url(../images/icons/sliver.png) center no-repeat #ffffff;
+  background-size: .84rem 1.04rem;
 }
-.rankList .listDetails .name {
-  width: 25%;
+.rankList .listDetails .sliver img {
+  width: .79rem;
+  height: .79rem;
+  border-radius: 50%;
+  margin: .23rem 0 0 .36rem;
 }
-.rankList .listDetails .expandNumber {
-  width: 20%;
+.rankList .listDetails .cuprum {
+  width: 1.50rem;
+  height: 1.04rem;
+  background: url(../images/icons/cuprum.png) center no-repeat;
+  background-size: .84rem 1.02rem;
+}
+.rankList .listDetails .cuprum img {
+  width: .79rem;
+  height: .79rem;
+  border-radius: 50%;
+  margin: .22rem 0 0 .36rem;
+}
+.rankList .first {
+  height: 1.50rem;
+  line-height: 1.50rem;
+}
+.rankList .second {
+  height: 1.30rem;
+  line-height: 1.30rem;
+}
+.rankList .third {
+  height: 1.20rem;
+  line-height: 1.20rem;
+  border: none;
 }
 .viewAll {
-  margin-top: .50rem;
+  margin-top: 1.25rem;
 }
 .viewAll a {
   display: block;
-  margin: 0 .30rem 0 50%;
-  line-height: .90rem;
-  background: #000;
-  background: url(../images/icons/more.png) right center no-repeat #ffffff;
-  background-size: .16rem .25rem;
+  line-height: .82rem;
+  color: #4f9efb;
+  background-color: #fff;
+}
+.viewAll a:first-child {
+  margin-bottom: .30rem;
 }

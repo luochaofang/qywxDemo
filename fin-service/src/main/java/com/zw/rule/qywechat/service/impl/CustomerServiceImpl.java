@@ -18,7 +18,8 @@ public class CustomerServiceImpl implements ICustomerService {
     private CustomerManageMapper customerManageMapper;
 
     @Override
-    public List<Customer> findCustomerDetail(Integer extensionType) {
-        return customerManageMapper.findByExtensionType(extensionType);
+    public List<Customer> selectAll(){
+        return customerManageMapper.selectAll();
     }
+
 }

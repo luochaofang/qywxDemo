@@ -3,6 +3,7 @@ body {
 }
 .detailsInfo {
   background-color: #f0f0f0;
+  color: #666666;
   line-height: .60rem;
   padding-left: .30rem;
 }
@@ -25,8 +26,9 @@ body {
   padding-left: .40rem;
 }
 .personList .itemInfo .photo img {
+  width: 0.80rem;
   height: 0.80rem;
-  width: auto;
+  border-radius: 50%;
   margin: 0.16rem auto;
 }
 .personList .itemInfo .name {

@@ -1,8 +1,12 @@
 package com.zw.rule.web.qywechat.controller;
 
+import com.zw.base.util.ObjectUtils;
+import com.zw.rule.qywechat.service.ICustomerService;
 import com.zw.rule.qywechat.service.IEmployeeService;
 import com.zw.rule.qywechat.service.IExtendService;
 import com.zw.rule.qywechat.service.IExtensionTypeService;
+import com.zw.rule.qywxmanage.Customer;
+import com.zw.rule.qywxmanage.Employee;
 import com.zw.rule.qywxmanage.ExtensionType;
 import com.zw.rule.web.qywechat.business.ExtendBusiness;
 import com.zw.settings.RouterSettings;
@@ -11,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,6 +39,9 @@ public class ExtendController {
     @Autowired
     private IEmployeeService employeeService;
 
+    @Autowired
+    private ICustomerService customerService;
+
     /**
      * 查看推广列表 create on 陈淸玉
      */
@@ -50,9 +58,35 @@ public class ExtendController {
         model.addAttribute("extendDetailList",maps);
         //推广类型
         model.addAttribute("typeList",typeList);
-        //用户信息
+        //员工信息
         model.addAttribute("employeeMap",employeeService.findAllToMap());
         return "qyWeChat/extendDetailList";
+    }
+
+    /**
+     * 获取推广查看人员列表
+     * @author 陈淸玉 create on  2018-0-31
+     * @param extendTypeId 推广类型ID
+     * @param employeeId 推广人ID
+     */
+    @GetMapping("extendDetail/{extendTypeId}/{employeeId}")
+    public String extendDetail(Model model, @PathVariable Long extendTypeId,  @PathVariable Long employeeId){
+        ExtensionType extensionType = extensionTypeService.getExtensionTypeById(extendTypeId);
+        Employee employee = employeeService.getEmployeeById(employeeId);
+        //推广查看人员id
+        List<Long> customerIdList = extendService.selectExtendSeeCustomer(extendTypeId, employeeId);
+        //推广查看人信息
+        List<Customer> customerList = customerService.selectAll();
+        Map<String, Customer> customerMap = ObjectUtils.ListToMap("id",  customerList);
+        //查看用户列表
+        model.addAttribute("customerIdList",customerIdList);
+        //全部查看用户map
+        model.addAttribute("customerMap",customerMap);
+        //推广类型
+        model.addAttribute("extensionType",extensionType);
+        //推广用户
+        model.addAttribute("employee",employee);
+        return "qyWeChat/extendDetail";
     }
 
     /**
