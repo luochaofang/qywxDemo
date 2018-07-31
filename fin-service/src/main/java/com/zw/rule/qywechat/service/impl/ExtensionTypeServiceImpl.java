@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 推广类型
@@ -21,5 +22,17 @@ public class ExtensionTypeServiceImpl implements IExtensionTypeService {
     @Override
     public List<ExtensionType> findTypes() {
         return extensionTypeMapper.findTypes();
+    }
+
+
+    /**
+     * 获取类型列表（模糊查询）
+     * @author 仙海峰
+     * @param param
+     * @return
+     */
+    @Override
+    public List<ExtensionType> getExtensionTypeList(Map param) {
+        return extensionTypeMapper.getExtensionTypeList(param);
     }
 }

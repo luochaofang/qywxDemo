@@ -1,0 +1,35 @@
+body {
+  background-color: #f0f0f0;
+}
+.recordTitle {
+  background-color: #deebfc;
+  line-height: .80rem;
+  height: .80rem;
+  padding: 0 .30rem;
+}
+.recordDetails li {
+  line-height: 1.10rem;
+  height: 1.10rem;
+  padding: 0 .30rem;
+}
+.recordDetails li:nth-child(odd) {
+  background-color: #fff;
+}
+.recordDetails li:nth-child(even) {
+  background-color: #f8fbff;
+}
+.photo {
+  width: 33.33%;
+}
+.photo img {
+  width: .80rem;
+  height: .80rem;
+  border-radius: 50%;
+  margin: 0.15rem 0;
+}
+.name {
+  width: 33.33%;
+}
+.clickNumber {
+  width: 33.33%;
+}

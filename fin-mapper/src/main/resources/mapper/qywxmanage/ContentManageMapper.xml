@@ -95,6 +95,14 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
+  <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from content_manage
+    where extension_type = #{typeId,jdbcType=BIGINT}
+    order by addtime desc
+  </select>
+
   <select id="findExtendContentList" resultMap="BaseResultMap" parameterType="java.util.Map" >
     SELECT
     contentManage.*, extensionType.name as contentType

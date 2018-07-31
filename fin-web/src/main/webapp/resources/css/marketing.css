@@ -1,0 +1,35 @@
+.marketingTask .taskDetails {
+  display: none;
+}
+.marketingTask .taskDetails.now {
+  display: block;
+}
+.taskList .taskItem {
+  width: 17%;
+  margin: 0 4%;
+  line-height: .90rem;
+  color: #666;
+}
+.taskList .now {
+  border-bottom: 3px solid #1d82d4;
+  color: #1d82d2;
+}
+.taskDetails {
+  height: 1.40rem;
+}
+.taskDetails .detailsItem {
+  border-bottom: 1px solid #e5e5e5;
+  padding: .30rem 0;
+}
+.taskDetails .detailsItem .taskLink {
+  display: block;
+  line-height: .60rem;
+  background: url(../images/icons/more.png) 7rem center no-repeat #ffffff;
+  background-size: .17rem .31rem;
+  padding: 0 .30rem;
+}
+.taskDetails .detailsItem .detailText {
+  width: 100%;
+  padding-right: .50rem;
+  color: #999;
+}

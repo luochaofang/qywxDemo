@@ -18,6 +18,8 @@ public interface ContentManageMapper {
 
     int updateByPrimaryKeySelective(Content record);
 
+    List<Content> selectByType(Long typeId);
+
     List<Content> findExtendContentList(ParamFilter paramFilter);
 
 }

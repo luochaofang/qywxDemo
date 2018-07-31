@@ -78,5 +78,17 @@
     select
     <include refid="Base_Column_List" />
     from extension_type
+    order by sorting
+  </select>
+
+  <select id="getExtensionTypeList" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+    <include refid="Base_Column_List" />
+    from extension_type
+    where 1=1
+    <if test="name != null and name != ''">
+      and name like '%${extensionTypeName}%'
+    </if>
+    order by sorting
   </select>
 </mapper>

@@ -8,6 +8,7 @@ import com.zw.rule.qywxmanage.Content;
 import com.zw.rule.qywxmanage.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.zw.rule.qywxmanage.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,16 +30,6 @@ public class ExtendServiceImpl implements IExtendService {
     private ContentShareManageMapper contentShareManageMapper;
 
     @Override
-    public List<Customer> findExtendDetails() {
-        return null;
-    }
-
-    @Override
-    public List<Map<String, String>> findExtends() {
-        return null;
-    }
-
-    @Override
     public List<Map> findPromotionByProTime() {
         List<Employee> employeeList = employeeManageMapper.findPromotionByProTime();
         if(null != employeeList && employeeList.size() > 0) {
@@ -57,8 +48,12 @@ public class ExtendServiceImpl implements IExtendService {
     }
 
     @Override
-    public List<Map<String, String>> countExtendByExtensionType(Integer extensionType) {
+    public List<Map<String, Object>> countExtendByExtensionType(Long extensionType) {
         return contentShareManageMapper.countExtendByExtensionType(extensionType);
     }
 
+    @Override
+    public List<Map<String, Object>> countExtendAll() {
+        return contentShareManageMapper.countExtendAll();
+    }
 }
