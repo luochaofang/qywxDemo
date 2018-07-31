@@ -9,13 +9,15 @@ public class Content {
 
     private Long extensitonType;
 
-    private Boolean status;
+    private Integer status;
 
     private String logo;
 
     private Date addtime;
 
     private String content;
+
+    private String contentType;
 
     public Long getId() {
         return id;
@@ -41,11 +43,11 @@ public class Content {
         this.extensitonType = extensitonType;
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -71,5 +73,13 @@ public class Content {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 }

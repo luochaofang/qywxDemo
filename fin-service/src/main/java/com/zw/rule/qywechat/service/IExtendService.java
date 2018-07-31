@@ -1,5 +1,7 @@
 package com.zw.rule.qywechat.service;
 
+import com.zw.rule.mybatis.ParamFilter;
+import com.zw.rule.qywxmanage.Content;
 import com.zw.rule.qywxmanage.Customer;
 import com.zw.rule.qywxmanage.Employee;
 
@@ -34,4 +36,5 @@ public interface IExtendService {
     List<Map> findPromotionByProTime() throws Exception;
 
     List<Map<String,String>> countExtendByExtensionType(Integer extensionType);
+
 }

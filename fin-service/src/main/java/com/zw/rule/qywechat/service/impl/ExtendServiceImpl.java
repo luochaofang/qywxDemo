@@ -2,7 +2,9 @@ package com.zw.rule.qywechat.service.impl;
 
 import com.zw.rule.mapper.qywxmanage.ContentShareManageMapper;
 import com.zw.rule.mapper.qywxmanage.EmployeeManageMapper;
+import com.zw.rule.mybatis.ParamFilter;
 import com.zw.rule.qywechat.service.IExtendService;
+import com.zw.rule.qywxmanage.Content;
 import com.zw.rule.qywxmanage.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.zw.rule.qywxmanage.Employee;
@@ -42,11 +44,11 @@ public class ExtendServiceImpl implements IExtendService {
         if(null != employeeList && employeeList.size() > 0) {
             List<Map> listMap = new ArrayList<>();
             for(Employee employee : employeeList) {
-                Map<String, Object> map = new HashMap<>();
+                Map<String, Object> map = new HashMap<>(4);
                 map.put("id",employee.getId());
                 map.put("headImage", employee.getHeadImage());
                 map.put("name", employee.getName());
-                map.put("conutShare", employee.getConutShare());
+                map.put("countShare", employee.getConutShare());
                 listMap.add(map);
             }
             return listMap;

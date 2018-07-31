@@ -9,7 +9,7 @@ public class ExtensionType {
 
     private Integer sorting;
 
-    private Boolean status;
+    private Integer status;
 
     private Date addtime;
 
@@ -36,19 +36,19 @@ public class ExtensionType {
         this.sorting = sorting;
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
     public Date getAddtime() {
         return addtime;
     }
 
     public void setAddtime(Date addtime) {
         this.addtime = addtime;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

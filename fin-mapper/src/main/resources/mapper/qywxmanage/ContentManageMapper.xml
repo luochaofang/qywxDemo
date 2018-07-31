@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="extensiton_type" property="extensitonType" jdbcType="BIGINT" />
-    <result column="status" property="status" jdbcType="BIT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
     <result column="logo" property="logo" jdbcType="VARCHAR" />
     <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
@@ -27,9 +27,6 @@
   </delete>
 
   <insert id="insertSelective" parameterType="com.zw.rule.qywxmanage.Content" >
-    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into content_manage
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="title != null" >
@@ -73,7 +70,7 @@
     </trim>
   </insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="com.zw.rule.qywxmanage.Content" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zw.rule.qywxmanage.Content">
     update content_manage
     <set >
       <if test="title != null" >
@@ -83,7 +80,7 @@
         extensiton_type = #{extensitonType,jdbcType=BIGINT},
       </if>
       <if test="status != null" >
-        status = #{status,jdbcType=BIT},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="logo != null" >
         logo = #{logo,jdbcType=VARCHAR},
@@ -97,4 +94,18 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="findExtendContentList" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    SELECT
+    contentManage.*, extensionType.name as contentType
+    FROM
+    content_manage AS contentManage
+    LEFT JOIN extension_type AS extensionType ON contentManage.extension_type = extensionType.id
+
+    <if test="param.title != null and param.title != ''">
+      and contentManage.title like '%${param.title}%'
+    </if>
+    order by contentManage.addtime desc
+  </select>
+
 </mapper>
