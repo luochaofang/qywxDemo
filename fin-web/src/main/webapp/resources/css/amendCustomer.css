@@ -1,0 +1,37 @@
+body {
+  background-color: #f0f0f0;
+}
+.customerInfo {
+  background-color: #fff;
+}
+.customerInfo .itemInfo {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 .30rem;
+}
+.customerInfo .itemInfo .infoType {
+  width: 25%;
+  line-height: .82rem;
+}
+.customerInfo .itemInfo input {
+  display: inline-block;
+  width: 75%;
+  height: .82rem;
+  text-indent: .20rem;
+}
+.customerInfo li:last-child {
+  border: none;
+}
+.btn {
+  padding: 1.00rem .50rem;
+}
+.btn .cancel,
+.btn .saveInfo {
+  color: #fff;
+  background-color: #ccc;
+  border-radius: .60rem;
+  width: 2.80rem;
+  line-height: 1.00rem;
+}
+.btn .saveInfo {
+  background: linear-gradient(to top right, #3686ff, #59abf7);
+}

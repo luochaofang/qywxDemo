@@ -12,11 +12,42 @@
     id, customer_id, content_id, addtime
   </sql>
 
-  <select id="selectForExtentionRecord" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select
-    <include refid="Base_Column_List" />
-    from content_see_manage
-    where id = #{id,jdbcType=BIGINT}
+  <select id="selectForExtentionRecord" resultType="com.zw.rule.qywxmanage.ExtensionRecordQuery" parameterType="java.lang.String" >
+      SELECT a.id,a.name as extension_type, a.extend_num,b.click_num
+      from
+      (SELECT
+           a.id,a.name, IFNULL(b.extend_num, 0) as extend_num
+      FROM
+          extension_type a
+      left join
+      (
+      SELECT a.id, b.extension_type,count(*) as extend_num from  employee_manage a join content_share_manage b
+      on a.id = b.employee_id
+      where a.userid = #{userid,jdbcType=VARCHAR}
+      GROUP BY a.id,b.extension_type
+      )b
+      on a.id = b.extension_type
+      ORDER BY a.sorting
+      ) a
+      join (
+
+      SELECT
+           a.id,a.name, IFNULL(b.click_num, 0) as click_num
+      FROM
+          extension_type a
+      left join (
+      select a.id,b.extension_type,count(*) as click_num
+      from employee_manage a left join (SELECT DISTINCT content_id,employee_id,extension_type from  content_share_manage b ) b
+      on a.id = b.employee_id left join content_see_manage c on
+      b.content_id = c.content_id
+      where a.userid = #{userid,jdbcType=VARCHAR}
+      group by a.id,b.extension_type
+      )b
+       on a.id = b.extension_type
+       ORDER BY a.sorting
+      ) b
+      on a.id = b.id
+
   </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >

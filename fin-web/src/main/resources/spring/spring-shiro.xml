@@ -62,6 +62,7 @@
                 /excel/*=anon
                 /taskMsg/*=anon
                 /contract/*=anon
+                /extensionrecord/*=anon
                 /fintecher_file/activity/*=anon
                 <!--/fintecher_file/*=anon-->
                 /**=formLoginFilter,resourceCheckFilter

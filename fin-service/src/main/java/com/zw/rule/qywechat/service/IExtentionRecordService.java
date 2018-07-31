@@ -1,10 +1,10 @@
 package com.zw.rule.qywechat.service;
 
 import com.zw.rule.qywxmanage.CustomerRecord;
+import com.zw.rule.qywxmanage.ExtensionRecordQuery;
 import com.zw.rule.qywxmanage.User;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 营销纪录服务
@@ -14,17 +14,12 @@ public interface IExtentionRecordService {
 
     String BEAN_KEY = "ExtentionRecordService";
 
-    /**
-     * 查看营销明细
-     * @return 返回营销明细列表
-     */
-    List<Map<String,String>> findExtendDetail(long empid);
 
     /**
      * 查看营销列表
      * @return 返回营销列表
      */
-    List<Map<String,String>> findExtendList(long empid);
+    List<ExtensionRecordQuery> findExtendList(String userid);
 
     /**
      * 查看营销类型查询记录详情
