@@ -2,7 +2,6 @@ package com.zw.rule.qywechat.service;
 
 import com.zw.rule.mybatis.ParamFilter;
 import com.zw.rule.qywxmanage.Content;
-import com.zw.rule.qywxmanage.Customer;
 
 import java.util.List;
 import java.util.Map;
