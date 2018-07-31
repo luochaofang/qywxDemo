@@ -23,13 +23,13 @@ public class ExtendServiceImpl implements IExtendService {
     @Resource
     private EmployeeManageMapper employeeManageMapper;
 
+    @Autowired
+    private ContentShareManageMapper contentShareManageMapper;
+
     @Override
     public List<Customer> findExtendDetails() {
         return null;
     }
-
-    @Autowired
-    private ContentShareManageMapper contentShareManageMapper;
 
     @Override
     public List<Map<String, String>> findExtends() {
@@ -54,9 +54,9 @@ public class ExtendServiceImpl implements IExtendService {
         return null;
     }
 
+    @Override
     public List<Map<String, String>> countExtendByExtensionType(Integer extensionType) {
         return contentShareManageMapper.countExtendByExtensionType(extensionType);
     }
-
 
 }
