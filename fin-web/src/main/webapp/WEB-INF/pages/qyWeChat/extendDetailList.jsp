@@ -34,7 +34,8 @@
         <tr>
             <td> ${employeeMap.get(list.employeeId.toString())} (${list.extensionTypeNum})</td>
             <c:forEach items="${typeList}" var="type">
-            <td><a href="${ctx}${module}/extend/extendDetail/${type.id}/${list.employeeId}">${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</a></td>
+                <td>${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</td>
+            <%--<td><a href="${ctx}${module}/extend/extendDetail/${type.id}/${list.employeeId}">${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</a></td>--%>
             </c:forEach>
         </tr>
         </c:forEach>
