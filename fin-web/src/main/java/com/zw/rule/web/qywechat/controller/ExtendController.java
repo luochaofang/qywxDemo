@@ -1,14 +1,13 @@
 package com.zw.rule.web.qywechat.controller;
 
-import com.zw.rule.core.Response;
 import com.zw.rule.qywechat.service.IExtendService;
 import com.zw.settings.RouterSettings;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +15,7 @@ import java.util.Map;
  * 推广控制器
  * @author 陈淸玉 create on 2018-07-30
  */
-@RestController
+@Controller
 @RequestMapping(RouterSettings.VERSION + "/extend")
 public class ExtendController {
 
@@ -34,7 +33,6 @@ public class ExtendController {
     /**
      * 查询推广排行榜员工信息
      */
-    @ResponseBody
     @GetMapping("findPromotionByProTime")
     public ModelAndView findPromotionByProTime(){
         ModelAndView modelAndView = new ModelAndView("qyWeChat/index");
