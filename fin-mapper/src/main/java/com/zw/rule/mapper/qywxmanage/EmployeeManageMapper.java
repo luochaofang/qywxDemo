@@ -29,4 +29,9 @@ public interface EmployeeManageMapper {
      */
     Employee selectByuserId(String userId);
 
+    /**
+     * 查询所有员工信息 create on 陈淸玉
+     * @return 员工列表
+     */
+    List<Employee> findAll();
 }

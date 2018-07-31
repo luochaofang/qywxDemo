@@ -40,6 +40,7 @@
         <property name="filterChainDefinitions">
             <value>
                 /=anon
+                /1.0.0/**=anon
                 /QueryString/**=anon
                 /login=anon
                 /changeLang=anon
@@ -64,7 +65,6 @@
                 /fintecher_file/activity/*=anon
                 <!--/fintecher_file/*=anon-->
                 /**=formLoginFilter,resourceCheckFilter
-                /1.0.0/*=anon
             </value>
         </property>
     </bean>
