@@ -5,8 +5,8 @@ package com.zw.rule.enterpriseWeChat;
  * Created by zh on 2018/7/30.
  */
 public enum AppEnum {
-    APPONE("1000002", "TBPIxYr4jOF_TTJFpD1XFIu3DlRgeFxr4qReSjJ4XhA"),
-    APPTWO("1000003", "oV6cXT0NT_c2xcgD5uuU6tYs0akju7YmklXl992EVCk");
+    APPONE("1000002", "oV6cXT0NT_c2xcgD5uuU6tYs0akju7YmklXl992EVCk"),
+    APPTWO("1000003", "TBPIxYr4jOF_TTJFpD1XFIu3DlRgeFxr4qReSjJ4XhA");
 
     private String appId;
     private String corpsecret;
