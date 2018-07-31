@@ -17,7 +17,7 @@
 </head
 <body>
 <header class="title">
-    <a href="${ctx}${module}/extend/extendDetail" class="back font32"></a>
+    <a href="${ctx}${api_version}/extend/extendDetail" class="back font32"></a>
     <div class="title-name center font36">推广明细</div>
 </header>
 <div class="expandDetails">

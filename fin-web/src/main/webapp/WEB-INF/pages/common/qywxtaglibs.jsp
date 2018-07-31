@@ -6,7 +6,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<c:set var="module" value="<%=RouterSettings.VERSION%>"/>
+<c:set var="api_version" value="<%=RouterSettings.VERSION%>"/>
+<c:set var="module" value="<%=RouterSettings.MODULE%>"/>
 <c:set var="time" value="<%=new Date().getTime()%>"/>
 <c:set var="version" value="?v=${time}"/>
 <c:set var="userId" value='<%=String.valueOf(request.getSession().getAttribute("userId"))%>'/>
@@ -21,6 +22,7 @@
     var userId = "${userId}";
     _ctx = _ctx == null || _ctx == "/" ? "" : _ctx;
     var _version = "${time}";
-    var module = "${module}";
+    var _module = "${module}";
+    var _api_version = "${api_version}";
 </script>
 

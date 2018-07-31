@@ -18,7 +18,7 @@
 
 <body>
 <header class="title">
-    <a href="${ctx}${module}/extend/findPromotionByProTime" class="back font32"></a>
+    <a href="${ctx}${api_version}/extend/findPromotionByProTime" class="back font32"></a>
     <div class="title-name center font36">员工推广明细</div>
 </header>
 <div class="expandDetails">
@@ -35,7 +35,7 @@
             <td> ${employeeMap.get(list.employeeId.toString())} (${list.extensionTypeNum})</td>
             <c:forEach items="${typeList}" var="type">
                 <td>${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</td>
-            <%--<td><a href="${ctx}${module}/extend/extendDetail/${type.id}/${list.employeeId}">${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</a></td>--%>
+            <%--<td><a href="${ctx}${api_version}/extend/extendDetail/${type.id}/${list.employeeId}">${list.get(type.id.toString()) eq null ? 0 : list.get(type.id.toString())}</a></td>--%>
             </c:forEach>
         </tr>
         </c:forEach>
