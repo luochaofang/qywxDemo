@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DigestUtil {
     private static final String ALGORITHM_MD5 = "MD5";
     private static final String ALGORITHM_SHA = "SHA";
+    private static final String ALGORITHM_SHA1 = "SHA-1";
     private static final String ALGORITHM_SHA256 = "SHA-256";
     private static final String ALGORITHM_SHA384 = "SHA-384";
     private static final String ALGORITHM_SHA512 = "SHA-512";
@@ -36,6 +37,10 @@ public class DigestUtil {
      */
     public static DigestUtil sha() {
         return cache(ALGORITHM_SHA);
+    }
+
+    public static DigestUtil sha1() {
+        return cache(ALGORITHM_SHA1);
     }
 
     /**
