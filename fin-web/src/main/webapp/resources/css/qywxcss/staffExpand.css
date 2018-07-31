@@ -1,0 +1,17 @@
+.expandDetails {
+  padding: .50rem .30rem;
+}
+.expandTable {
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+  width: 100%;
+}
+.expandTable tr {
+  line-height: .90rem;
+}
+.expandTable td {
+  border: 1px solid #e5e5e5;
+}
+.expandTable td a {
+  display: block;
+}

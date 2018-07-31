@@ -1,0 +1,36 @@
+.expandDetails .activityType {
+  width: 100%;
+  padding: .30rem;
+}
+.expandDetails .activityType li {
+  width: 25%;
+  line-height: .90rem;
+}
+.expandDetails .activityType .now {
+  border-bottom: 3px solid #1d83d2;
+}
+.expandDetails .activityInfo {
+  padding: .30rem 0;
+}
+.expandDetails .activityInfo li {
+  line-height: .90rem;
+}
+.expandDetails .activityInfo li:nth-child(odd) {
+  background-color: #fff;
+}
+.expandDetails .activityInfo li:nth-child(even) {
+  background-color: #f6f8fa;
+}
+.expandDetails .activityInfo li:first-child {
+  background-color: #fff1da;
+  color: #ed7e54;
+}
+.expandDetails .activityInfo .activityName {
+  width: 56%;
+}
+.expandDetails .activityInfo .expandNumber {
+  width: 22%;
+}
+.expandDetails .activityInfo .viewedNumber {
+  width: 22%;
+}
