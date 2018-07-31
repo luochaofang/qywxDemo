@@ -32,7 +32,7 @@ public abstract class BaseDao<T extends BaseEntity> implements GenericDao<T> {
         if (entity != null) {
             entity.setCreateTime(new Date());
             entity.setUpdateTime(new Date());
-            entity.setIsDelete(Integer.valueOf(Constants.ENABLE_STATE));
+            entity.setIsDelete(BigInteger.ZERO.intValue());
         }
         return this.sqlSessionTemplate.insert(statements, entity);
     }
