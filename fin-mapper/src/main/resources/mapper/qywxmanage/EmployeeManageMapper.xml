@@ -87,4 +87,9 @@
       ORDER BY
           conutShare DESC,employeeId ASC limit 0 ,3
   </select>
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from employee_manage
+  </select>
 </mapper>

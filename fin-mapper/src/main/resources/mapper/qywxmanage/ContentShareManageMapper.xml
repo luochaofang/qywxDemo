@@ -85,7 +85,20 @@
   </update>
 
   <select id="countExtendByExtensionType" resultType="java.util.Map">
-    select employee_id as employeeId,COUNT(extension_type) as extensionTypeNum FROM content_share_manage WHERE extension_type = #{extensionType} GROUP BY content_id ORDER BY COUNT(extension_type)
+    select employee_id as employeeId,COUNT(extension_type) as extensionTypeNum FROM content_share_manage WHERE extension_type = #{extensionType} GROUP BY employee_id,extension_type
+  </select>
+
+  <select id="countExtendAll" resultType="java.util.Map">
+    SELECT
+        emp.id as employeeId,
+        COUNT(sha.extension_type) as extensionTypeNum
+    FROM
+        content_share_manage sha
+    RIGHT JOIN employee_manage emp ON sha.employee_id = emp.id
+    GROUP BY
+        sha.employee_id
+    ORDER BY
+        COUNT(sha.extension_type) DESC
   </select>
 
 

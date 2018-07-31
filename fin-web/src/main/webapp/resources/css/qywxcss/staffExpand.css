@@ -1,16 +1,21 @@
-.expandDetails {
-  padding: .50rem .30rem;
-}
 .expandTable {
-  border: 1px solid #e5e5e5;
+  border: none;
   border-collapse: collapse;
   width: 100%;
 }
 .expandTable tr {
-  line-height: .90rem;
+  line-height: .72rem;
 }
-.expandTable td {
-  border: 1px solid #e5e5e5;
+.expandTable tr:nth-child(odd) {
+  background-color: #f8fbff;
+}
+.expandTable tr:nth-child(even) {
+  background-color: #fff;
+}
+.expandTable tr:first-child {
+  background-color: #deebfc;
+  line-height: .90rem;
+  padding: 0 .30rem;
 }
 .expandTable td a {
   display: block;
