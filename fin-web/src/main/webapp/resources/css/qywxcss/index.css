@@ -1,0 +1,46 @@
+.rankList {
+  margin: .50rem .30rem 0;
+  border: 1px solid #e5e5e5;
+  border-radius: .10rem;
+}
+.rankList .rankListTitle {
+  line-height: .90rem;
+}
+.rankList .listContent {
+  padding: 0 .30rem;
+}
+.rankList .listContent li:last-child {
+  border: none;
+}
+.rankList .listDetails {
+  line-height: 1.00rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+.rankList .listDetails .ranking {
+  width: 20%;
+}
+.rankList .listDetails .photo {
+  width: 35%;
+}
+.rankList .listDetails .photo img {
+  height: 1.00rem;
+  width: auto;
+  margin: 0.20rem auto;
+}
+.rankList .listDetails .name {
+  width: 25%;
+}
+.rankList .listDetails .expandNumber {
+  width: 20%;
+}
+.viewAll {
+  margin-top: .50rem;
+}
+.viewAll a {
+  display: block;
+  margin: 0 .30rem 0 50%;
+  line-height: .90rem;
+  background: #000;
+  background: url(../images/icons/more.png) right center no-repeat #ffffff;
+  background-size: .16rem .25rem;
+}

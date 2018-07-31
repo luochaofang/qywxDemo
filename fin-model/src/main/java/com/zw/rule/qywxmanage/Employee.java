@@ -9,6 +9,8 @@ public class Employee {
 
     private String userid;
 
+    private Integer conutShare;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +41,13 @@ public class Employee {
 
     public void setUserid(String userid) {
         this.userid = userid == null ? null : userid.trim();
+    }
+
+    public Integer getConutShare() {
+        return conutShare;
+    }
+
+    public void setConutShare(Integer conutShare) {
+        this.conutShare = conutShare;
     }
 }

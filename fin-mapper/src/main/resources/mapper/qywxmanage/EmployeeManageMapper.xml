@@ -70,4 +70,21 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="findPromotionByProTime" resultType="com.zw.rule.qywxmanage.Employee">
+      SELECT
+        count(
+            contentShare.extension_type
+        ) AS conutShare,
+        contentShare.employee_id AS employeeId,
+        employeeManage. NAME AS NAME,
+        employeeManage.head_image AS headImage
+      FROM
+          content_share_manage AS contentShare
+      INNER JOIN employee_manage AS employeeManage ON employeeManage.id = contentShare.employee_id
+      GROUP BY
+          contentShare.employee_id
+      ORDER BY
+          conutShare DESC,employeeId ASC limit 0 ,3
+  </select>
 </mapper>
